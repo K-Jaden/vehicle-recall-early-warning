@@ -1,0 +1,27 @@
+# Source registry used by scripts/download_data.py
+# verified: true  -> URL answered HTTP 200 to a HEAD request on 2026-10-14 (file contents not inspected)
+# url: null       -> TODO, fill in manually (script skips these)
+sources:
+  complaints:
+    description: NHTSA consumer complaints (all makes; filter Hyundai/Kia in preprocessing)
+    url: https://static.nhtsa.gov/odi/ffdd/cmpl/FLAT_CMPL.zip
+    filename: FLAT_CMPL.zip
+    verified: true
+
+  recalls:
+    description: NHTSA recalls (post-2010 file; a PRE_2010 file also exists)
+    url: https://static.nhtsa.gov/odi/ffdd/rcl/FLAT_RCL_POST_2010.zip
+    filename: FLAT_RCL_POST_2010.zip
+    verified: true
+
+  tsb:
+    description: NHTSA manufacturer communications (technical service bulletins)
+    url: null        # TODO: copy from where the 2020-2024 file was downloaded; check other year ranges
+    filename: null
+    verified: false
+
+  kr_recalls:
+    description: 한국교통안전공단 자동차결함 리콜현황 (공공데이터포털)
+    url: null        # TODO: data.go.kr download URL or API flow
+    filename: null
+    verified: false

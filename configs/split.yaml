@@ -1,0 +1,20 @@
+# Experiment design. Change values here, not in code. Record changes in DECISIONS.md.
+unit: [model, model_year, component, month]
+horizon_months: 6              # y = 1 if the unit is recalled within N months
+horizon_months_compare: [3, 12]
+
+split:                         # time-based by recall date; no random shuffling
+  train: [2015-01, 2020-12]
+  valid: [2021-01, 2021-12]
+  test:  [2022-01, 2025-12]
+
+leakage_guards:
+  exclude_complaints_after_recall: true
+  first_recall_only: true
+  mask_identifiers_before_llm_scoring: true
+
+evaluation:
+  top_k: []                    # TODO: decide after checking the number of units per month
+  metrics: [precision_at_k, recall_at_k, lead_time_months, pr_auc]
+
+random_seed: 42

@@ -1,0 +1,40 @@
+# ---- Data (never commit; see data/README.md) ----
+data/raw/*
+data/interim/*
+data/processed/*
+data/llm_cache/
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# ---- Secrets ----
+.env
+.env.*
+!.env.example
+
+# ---- Models / large artifacts ----
+models/
+*.pkl
+*.joblib
+*.zip
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.log
